@@ -1,0 +1,12 @@
+<form
+  [formGroup]="countryForm"
+  class="country-form"
+  id="add-country"
+  (ngSubmit)="submitForm($event)"
+>
+  <div class="field">
+    <label>Country name:</label>
+    <input type="text" formControlName="nameControl" />
+  </div>
+  <button>+</button>
+</form>

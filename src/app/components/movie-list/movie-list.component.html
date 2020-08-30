@@ -1,0 +1,13 @@
+<div class="movie-list-container">
+  <div class="movie-list">
+    <ul id="movie-list">
+      <li *ngFor="let movie of movies" (click)="movieSelection(movie.id)">
+        {{ movie.name }}
+      </li>
+    </ul>
+    <div>
+      Total Movies Watched:
+      {{ movies ? movies.length : 0 }}
+    </div>
+  </div>
+</div>

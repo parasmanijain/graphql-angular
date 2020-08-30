@@ -1,0 +1,12 @@
+<form
+  class="language-form"
+  [formGroup]="languageForm"
+  id="add-language"
+  (ngSubmit)="submitForm($event)"
+>
+  <div class="field">
+    <label>Language name:</label>
+    <input type="text" formControlName="nameControl" />
+  </div>
+  <button>+</button>
+</form>

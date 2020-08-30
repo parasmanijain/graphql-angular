@@ -1,0 +1,12 @@
+<form
+  [formGroup]="genreForm"
+  class="genre-form"
+  id="add-genre"
+  (ngSubmit)="submitForm($event)"
+>
+  <div class="field">
+    <label>Genre name:</label>
+    <input type="text" formControlName="nameControl" />
+  </div>
+  <button class="add-button">+</button>
+</form>

@@ -1,0 +1,44 @@
+<form id="add-movie" [formGroup]="movieForm" (ngSubmit)="submitForm($event)">
+  <div class="field">
+    <label>Movie name:</label>
+    <input type="text" formControlName="nameControl" />
+  </div>
+  <div class="field">
+    <label>Year:</label>
+    <input type="text" formControlName="yearControl" />
+  </div>
+  <div class="field">
+    <label>Genre:</label>
+    <select formControlName="genreControl">
+      <option value="">Select genre</option>
+      <option *ngFor="let genre of genres; let i = index" [value]="genre.id">
+        {{ genre.name }}
+      </option>
+    </select>
+  </div>
+  <div class="field">
+    <label>Language:</label>
+    <select formControlName="languageControl">
+      <option value="">Select language</option>
+      <option
+        *ngFor="let language of languages; let i = index"
+        [value]="language.id"
+      >
+        {{ language.name }}
+      </option>
+    </select>
+  </div>
+  <div class="field">
+    <label>Director:</label>
+    <select formControlName="directorControl">
+      <option value="">Select director</option>
+      <option
+        *ngFor="let director of directors; let i = index"
+        [value]="director.id"
+      >
+        {{ director.name }}
+      </option>
+    </select>
+  </div>
+  <button>+</button>
+</form>

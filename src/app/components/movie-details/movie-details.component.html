@@ -1,0 +1,20 @@
+<div class="movie-details" id="movie-details">
+  <div *ngIf="movie">
+    <h2>{{ movie.name }} ({{ movie.year }})</h2>
+    <p>Language: {{ movie.language.name }}</p>
+    <p>Genre: {{ movie.genre.name }}</p>
+    <p>
+      Director: {{ movie.director.name }} ({{ movie.director.country.name }})
+    </p>
+    <p>Other Movies by this director:</p>
+    <ul class="other-movies">
+      <li
+        *ngFor="let item of movie.director.movies"
+        [style.display]="item.name === movie.name ? 'none' : 'list-item'"
+      >
+        {{ item.name }} ({{ item.year }})
+      </li>
+    </ul>
+  </div>
+  <div *ngIf="!movie">No movie selected...</div>
+</div>
